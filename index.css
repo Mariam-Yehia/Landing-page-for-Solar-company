@@ -134,6 +134,28 @@ nav ul {
 
 
 
+/* Style for the Horizontal Line with Numbers */
+.overlay-text .line-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px; /* Add space below the line */
+  }
+
+  .overlay-text .number {
+    font-size: 15px;
+    color: #fcfcfc;
+  }
+
+  .overlay-text .line {
+    width: 200px;
+    height: 4px;
+    background: #5c5c5c; 
+  }
+
+
+
+
 /* Image Section Styling */
 .image-section {
     position: relative;
@@ -146,7 +168,6 @@ nav ul {
     position: relative;
     width: 100%;
     height: 575px;
-    /* Set the desired height */
 }
 
 
@@ -154,21 +175,18 @@ nav ul {
 /* Overlay Text Styling */
 .overlay-text {
     position: absolute;
-    top: 30%;
+    top: 20%;
     /* Center vertically */
     left: 12.3%;
     /* Position text on the left */
     color: white;
     /* Text color */
     max-width: 60%;
-    /* Control text width */
 }
 
 .overlay-text h1 {
     font-size: 3.2em;
-    /* Adjust size */
     margin: 0 0;
-    /* Space below heading */
     line-height: 1.2;
 }
 
@@ -236,25 +254,17 @@ nav ul {
 
 .yellow-rectangle {
     position: absolute;
-    /* Positioned relative to .info-content */
     top: 70%;
-    /* Adjusts vertical placement */
     right: 240px;
-    /* Distance from the right side */
     background-color: #ffbb1c;
-    /* Yellow background */
     padding: 20px;
     border-radius: 12px;
-    /* Rounded corners */
     color: #000;
-    /* Text color */
     font-family: Arial, sans-serif;
     text-align: center;
     width: 225px;
-    /* Adjust based on content */
     height: 167px;
     z-index: 2;
-    /* Ensures it appears above other elements */
 
 }
 
@@ -362,9 +372,7 @@ nav ul {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    /* Makes the image position itself without affecting the parent */
     top: 56px;
-    /* Adds margin space for the image without affecting the text */
     left: 31px;
 }
 
@@ -665,9 +673,9 @@ nav ul {
 }
 
 .card-image {
-    width: 100%; /* Full width of the wrapper */
+    width: 100%; 
     height: 100%; /* Full height of the wrapper */
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    object-fit: cover; 
 }
 
 .blend-overlay {
@@ -677,7 +685,7 @@ nav ul {
     width: 100%;
     height: 100%;
     background-color: #c6ecd6; /* Semi-transparent blend color */
-    opacity: 0.5; /* Adjust opacity for blend effect */
+    opacity: 0.5; 
     border-radius: 10px; /* Match the card's border radius */
 }
 
@@ -754,8 +762,8 @@ nav ul {
   
   .values-container {
     display: flex; /* Flexbox for alignment */
-    justify-content: center; /* Centers containers horizontally */
-    align-items: stretch; /* Ensures all containers are the same height */
+    justify-content: center; 
+    align-items: stretch; 
     gap: 30px; /* Spacing between containers */
   }
   
@@ -967,203 +975,385 @@ nav ul {
   .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     max-width: 1200px;
-    height: 240px;
+    height: 245px;
     margin: 0 auto;
     padding: 0 20px;
   }
   
-  /* Left Section (Logo) */
+  /* Left Section (Logo + Links) */
   .footer-left {
-    flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack logo and links vertically */
+    gap: 47px; /* Space between the logo and the button row */
+    flex: 1;
+    margin-bottom: 30px;
+    margin-left: 30px;
   }
   
+  /* Logo */
   .footer-left img {
     width: 185px; /* Ensures consistent logo size */
     height: auto; /* Maintains aspect ratio */
   }
   
-  /* Center Section (Links and Subscription Form) */
-  .footer-center {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px; /* Space between links and subscription form */
-    flex: 2;
-    width: 100%;
-  }
-  
   /* Links Section */
   .footer-links {
     display: flex;
-    justify-content: space-between;
-    gap: 25px; /* Space between links */
+    gap: 40px; /* Space between the links */
   }
   
   .footer-links a {
-    color: white;
+    color: rgb(233, 232, 232);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 17px;
   }
   
-  
+
   /* Subscription Form */
-  .subscribe-form {
+  .footer-right .subscribe-form {
+    position: relative; /* Make the container relative for positioning the button */
+    width: 100%; /* Ensure the form takes up the full width of its container */
     display: flex;
-    gap: 10px; /* Space between input and button */
+    border-radius: 25px;
+    overflow: hidden;
   }
+
   
+  
+  /* Input Styling */
   .subscribe-form input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #B3BDC7;
+    border-radius: 25px; /* Rounded corners */
+    background-color: transparent;
     outline: none;
     flex: 1;
-    max-width: 220px; /* Restrict input width */
+    max-width: 500px; 
+    width: 360px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  /* Styling the placeholder text for the email input field */
+.footer-right .subscribe-form input[type="email"]::placeholder {
+    font-size: 16px; /* Adjust this to change the size */
+    color: #aaa; /* Change the color of the placeholder */
+    font-family: Arial, sans-serif; /* Change the font */
   }
   
-  .subscribe-form button {
-    background-color: #FFD700; /* Yellow button */
+  
+
+
+/* Subscription Form Button */
+.subscribe-form button {
+    position: absolute;
+    right: 0; /* Position the button inside the input field, on the right */
+    top: 0;
+    bottom: 0; /* Ensure the button takes full height of the input */
+    background:  #ffbb1c; /* Gradient from gold to yellow */
     border: none;
-    padding: 10px 20px;
-    color: black;
+    padding: 10px 25px; 
+    color: white;
     font-weight: bold;
-    border-radius: 5px;
+    font-size: 14px; 
+    border-radius: 50px; 
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+  }
+
+
+  .subscribe-form button:hover {
+    background: linear-gradient(90deg, #FFC107, #FFA500); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
   }
   
-  .subscribe-form button:hover {
-    background-color: #FFC107;
-  }
   
   /* Footer Bottom Section */
   .footer-bottom {
-    margin-top: 20px;
-    text-align: center;
-    border-top: 1px solid #4B5563; /* Border gray */
-    padding-top: 10px;
+    display: flex;
+    margin: 0 auto; /* Center the line */
+    justify-content: space-between; /* Space between terms and copyright */
+    border-top: 1px solid #4B5563; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    font-size: 12px;
+    max-width: 1200px; /* Restrict width to a max value */
+
+  }
+  .footer-bottom p {
+    margin-right: 20px;
     font-size: 12px;
   }
   
+  /* Footer Policy Links */
   .footer-policy-links {
     display: flex;
-    justify-content: center;
-    gap: 15px; /* Space between links */
+    gap: 30px; /* Space between links */
     margin-bottom: 10px; /* Space between links and copyright */
+    margin-left: 32px;
+
   }
   
   .footer-policy-links a {
-    color: white;
+    color: rgb(121, 121, 121);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  /* Adding the '|' separator after each link except the last one */
+.footer-policy-links a:not(:last-child)::after {
+    content: " | ";
+    margin-left: 10px; 
+  }
+
+  /* Copyright Text */
+.footer-bottom p {
+    color: rgb(121, 121, 121);
+    font-size: 12px; /* Adjust font size */
+    margin-right: 28px; /* Remove default margin */
+    margin-top: 0;
   }
   
-
   
   
   
   
+  
 
 
 
+/* Global text size and overflow */
+html, body {
+    font-size: 16px; /* Base size for scaling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
-/* Responsive Styles */
+@media (max-width: 1200px) {
+    body {
+        font-size: 15px; /* Scale down slightly */
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 14px; /* Further scaling for tablets */
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        font-size: 13px; /* Smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Extra small devices */
+    }
+}
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .container {
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
     .contact-info {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 120px; /* Scale down logo */
+        height: auto;
     }
 
-    .image-section {
-        margin-bottom: 50px;
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .image-container {
+        height: 450px; /* Reduce height */
     }
 
     .overlay-text h1 {
-        font-size: 2em;
+        font-size: 2.5em; /* Adjust title size */
+    }
+
+    .overlay-text p {
+        font-size: 1.1em; /* Adjust paragraph size */
+    }
+
+    .button-container {
+        flex-wrap: wrap; /* Wrap buttons */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .info-content {
+        flex-direction: column; /* Stack items */
+        align-items: center;
+        text-align: center;
+    }
+
+    .yellow-rectangle {
+        position: static; /* Inline for smaller screens */
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        height: 300px; /* Further reduce height */
+    }
+
+    .overlay-text h1 {
+        font-size: 2em; /* Smaller title */
     }
 
     .overlay-text p {
         font-size: 1em;
     }
 
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .yellow-rectangle {
-        width: 100%;
-        right: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .info-content {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0;
-    }
-
-    .image-container-info {
-        order: -1; /* Move the image to the top on smaller screens */
-    }
-
-    .image-container-info img {
-        max-width: 90%;
-        margin: 0 auto;
-        top: 0;
-        left: 0;
-    }
-
-    .call-section {
-        margin-top: 50px;
-    }
-
     .services-list {
-        flex-direction: column;
+        flex-direction: column; /* Stack services */
         align-items: center;
+    }
+
+    .service {
+        min-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .info-heading {
+        font-size: 2em; /* Reduce heading size */
+    }
+
+    .info-description {
+        font-size: 1em; /* Reduce description size */
+    }
+
+    .info-list li {
+        font-size: 0.9em;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .image-container {
-        height: 300px; /* Adjust height for smaller screens */
-    }
-
     .overlay-text h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     .overlay-text p {
+        font-size: 0.9em;
+    }
+
+    .info-heading {
+        font-size: 1.8em;
+    }
+
+    .info-description {
+        font-size: 0.9em;
+    }
+
+    .info-list li {
         font-size: 0.8em;
     }
 
-    .services-heading {
-        font-size: 2em;
-    }
-
-    .services-description {
-        margin: 0 20px;
-    }
-
-    .service {
-        min-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .service-icon {
-        font-size: 2em;
+    .yellow-rectangle {
+        width: 100%; /* Full width */
+        padding: 15px;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .footer-left, .footer-right {
+        width: 100%; /* Full width */
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        width: 140px; /* Scale down logo */
+    }
+
+    .subscribe-form input {
+        width: 80%; /* Adjust width */
+    }
+}
+
+@media (max-width: 480px) {
+    .subscribe-form input {
+        font-size: 14px;
+    }
+
+    .subscribe-form button {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    .footer-policy-links a {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .image-section, .info-content, .services-list {
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Stack cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-text, .info-content, .cards-container {
+        text-overflow: ellipsis; /* Truncate long text */
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+}
+
